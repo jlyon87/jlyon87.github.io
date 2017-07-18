@@ -1,0 +1,188 @@
+/* force body to the bounds of the viewport */
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	background-image: url("../images/hip-square.png");
+	height: 100%;
+}
+
+header {
+	width: 100%;
+	border-bottom: thick solid #cccccc;
+}
+
+footer {
+	border-top: thick solid #4aaaa5;
+	background-color: #666666;
+	color: #ffffff;
+	text-align: center;
+	vertical-align: middle;
+	max-height: 50px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	padding: 1rem;
+	z-index: 10;
+}
+
+h1, h2, h3 {
+	font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+h2, h3 {
+	color: #4aaaa5;
+}
+
+.masthead {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.sidebar h3 {
+	padding-bottom: 1rem;
+	border-bottom: thin solid #cccccc;
+}
+
+.sidebar div a {
+	padding-right: 1rem;
+}
+
+.sidebar div a:last-child {
+	padding-right: 0;
+}
+
+input.btn {
+	border: none;
+	border-right: .1rem solid #cccccc;
+	text-align: center;
+	padding: .3rem;
+	margin: .3rem;
+}
+
+input.btn:hover {
+	border: .2rem solid #cccccc;
+}
+
+input.txt {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+	height: 8rem;
+}
+
+nav.links {
+	float: right;
+}
+
+.links a {
+	color: #999;
+	text-decoration: none;
+	padding: 0 1rem 0 1rem;
+	border-right: 1px solid #efefef;
+}
+
+.links a:last-child {
+	border-right: none;
+}
+
+img.profile-pic {
+	float: left;
+	padding-right: 1rem;
+	max-height: 200px;
+}
+
+img.link-icon {
+	width: 20%;
+}
+
+div.form-control div {
+	padding: .5rem 0 .5rem 0;
+}
+
+/* Set's container width relative to viewport and centers */
+.container {
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.content {
+	float: left;
+	width: 50%;
+}
+
+.sidebar {
+	float: right;
+	width: 30%;
+}
+
+.portfolio-grid {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.portfolio-grid:after {
+	content: "";
+	display: block;
+	clear:both;
+}
+
+.portfolio-card {
+	float: left;
+	width: 40%;
+	margin: .5rem;
+	padding: 0;
+	position: relative;
+}
+
+img.card-image {
+	width: 100%;
+  z-index: 1;
+}
+
+div.card-title {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 2;
+	text-align: center;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	padding: .5rem 0 .5rem 0;
+	margin-bottom: .7rem;
+}
+
+/* Each Row `clears` the float left properties so we can begin a new line/row */
+.row {
+	width: 100%;
+}
+
+.row:after {
+	content: "";
+	display: block;
+	clear:both;
+}
+
+/* Each box gets color, border, float left and some basic margin/padding */
+.header-name {
+	float: left;
+}
+
+.around-small {
+	margin: 1rem;
+	padding: 1rem;
+}
+
+.theme-default {
+	color: #777777;
+	background-color: #ffffff;
+}
+
+.theme-teal {
+	background-color: #4aaaa5;
+	color: #ffffff;
+}
