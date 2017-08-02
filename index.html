@@ -1,49 +1,124 @@
 <!DOCTYPE html>
-<html>
-	<title></title>
-	<head>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css" >
-	</head>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<body>
-		<header class="row theme-default" >
-			<div class="masthead">
-				<div class="header-name theme-teal around-small" >
-					<h1>Justin Lyon</h1>
-				</div>
+	<title>Hangman | JLyon</title>
 
-				<nav class="links around-small" >
-					<a href="index.html" >About</a>
-					<a href="portfolio.html" >Portfolio</a>
-					<a href="contact.html" >Contact</a>
-				</nav>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
+	<link rel="stylesheet" href="assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/master.css">
+
+	<!-- <script src="https://use.fontawesome.com/157551023b.js"></script> -->
+</head>
+
+<body>
+	<header class="container-fluid">
+		<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-primary">
+			<a class="navbar-brand">Hangman</a>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="HangmanApp.Controller.start();">Start</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="HangmanApp.Controller.reset();">Reset</a>
+					</li>
+				</ul>
 			</div>
-		</header>
+		</nav>
+	</header>
 
-		<div class="container">
-			<div class="row" >
-				<section class="content around-small theme-default" >
-					<h2>About Me</h2>
-					<img class="profile-pic" alt="Justin" src="assets/images/fbprofpic2.jpg" />
-					<p>
-						Lorem ipsum dolor sit amet, sem eget, duis consectetuer quisque odio consequat accumsan, volutpat massa ut mauris. At velit urna. Pharetra metus faucibus. Eros integer conubia justo vehicula, eget libero at dapibus pellentesque, mi semper odio nulla a sit. Porttitor a, nunc bibendum donec. Nunc molestie suscipit, arcu fusce habitasse sollicitudin, quam feugiat. Mauris quisque lectus auctor non natoque viverra, curabitur sed. Sodales pellentesque nonummy, nullam et ante duis leo nulla sollicitudin, nisl urna, ac sit. Risus aliquam in, molestie aenean.
-					</p>
+	<div class="container">
+		<div class="row">
+			<div class=" col-md-8">
+				<section class="card">
+					<div class="card-block">
+						<h1 class="card-title text-center">Hangman</h1>
+
+						<div class="row">
+							<div class="col-md-12">
+								<section class="text-center">
+									<div >
+										<label for="word"></label>
+										<span class="output" id="word">Click Start to Begin!</span>
+									</div>
+
+									<div >
+										<label for="letters">Letters Guessed: </label>
+										<div class="output" id="letters"></div>
+									</div>
+
+								</section>
+							</div>
+						</div>
+
+					</div>
 				</section>
+			</div>
 
-				<section class="sidebar around-small theme-default" >
-					<h3>Connect with Me</h3>
-					<div>
-						<a href="#"><img class="link-icon" alt="git-icon" src="assets/images/github-128x128.png" /></a>
-						<a href="#"><img class="link-icon" alt="git-icon" src="assets/images/linkedin-128x128.png" /></a>
-						<a href="#"><img class="link-icon" alt="git-icon" src="assets/images/stack-overflow-128x128.png" /></a>
+			<div class="col-md-4">
+				<section class="card">
+					<div class="card-block">
+						<h2 class="card-title text-center">Play!</h2>
+
+						<p class="card-text">
+							<div class="row text-center">
+
+								<div class="col-md-12">
+									<label for="wins">Wins: </label>
+									<span class="output" id="wins"></span>
+								</div>
+
+								<div class="col-md-12">
+									<label for="losses">Losses: </label>
+									<span class="output" id="losses"></span>
+								</div>
+
+								<div class="col-md-12">
+									<label for="remaining">Remaining Guesses: </label>
+									<span class="output" id="remaining"></span>
+								</div>
+
+								<div class="col-md-12 mt-4">
+
+									<div class="btn-group" role="group" aria-label="Game Buttons">
+										<button class="btn btn-primary" type="button" name="Start" onclick="HangmanApp.Controller.start();">Start</button>
+										<button class="btn btn-warning" type="button" name="Reset" onclick="HangmanApp.Controller.reset();">Reset</button>
+									</div>
+								</div>
+							</div>
+							<div class="row text-center">
+								<div class="col-md-12 mt-4">
+									<div >
+										<i id="statusIcon" class="output"></i>
+										<span id="message" class="output"></span>
+									</div>
+								</div>
+							</div>
+						</p>
+
 					</div>
 				</section>
 			</div>
 
 		</div>
+	</div>
 
-		<footer >
-			&copy; Copyright 2017 Justin Lyon
-		</footer>
-	</body>
+	<footer class="container-fluid">
+		<nav class="navbar fixed-bottom navbar-inverse bg-inverse">
+			<p class="navbar-text text-center">
+				&copy; Justin Lyon 2017</p>
+		</nav>
+	</footer>
+
+	<script type="text/javascript" src="assets/js/hm-stats.js"></script>
+	<script type="text/javascript" src="assets/js/hm-word.js"></script>
+	<script type="text/javascript" src="assets/js/words-api.js"></script>
+	<script type="text/javascript" src="assets/js/hangman-app.js"></script>
+	<script type="text/javascript" src="assets/js/hm-view.js"></script>
+	<script type="text/javascript" src="assets/js/hm-controller.js"></script>
+</body>
 </html>
